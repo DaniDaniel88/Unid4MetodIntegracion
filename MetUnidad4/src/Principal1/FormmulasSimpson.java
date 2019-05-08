@@ -10,10 +10,10 @@ public class FormmulasSimpson {
     }
     
     public double[] FuncionPreterminada(double Xn[], int a, int n){
-        double f[];
-        f=new double[n+1];
+        double f[] = new double[n+1];
         
-        for(int i=0;i<=n;i++){          
+        for(int i=0;i<=n;i++)
+        {          
                 f[i]=Math.PI*(Math.pow(1+(Math.pow(Xn[i], 2)/2),2));
         }
         return f;
@@ -23,7 +23,8 @@ public class FormmulasSimpson {
         double acum[] =new double[n+1];
         
         
-        for(int i=0;i<=n;i++){
+        for(int i=0;i<=n;i++)
+        {
             if(i==0){
                 
                 acum[i]=a;
