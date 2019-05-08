@@ -112,10 +112,20 @@ public class VentanaSimpson extends javax.swing.JFrame {
         );
 
         BTCalcular.setText("Calcular");
+        BTCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTCalcularActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Resultado");
 
         Nuevo.setText("Nuevo");
+        Nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,7 +180,68 @@ public class VentanaSimpson extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void BTCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTCalcularActionPerformed
+        this.CalcularM();
+    }//GEN-LAST:event_BTCalcularActionPerformed
+
+    private void NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoActionPerformed
+       ancho.setText(" ");
+       ALimit.setText("");
+       BLimit.setText("");
+       NVeces.setText("");
+       ResultadoF.setText(" ");
+
+       BLimit.requestFocus();
+       //jldoble.setText(" ");
+       for(int j=0; j<i; j++){
+            MoldeTabla.removeRow(0);
+        }
+        i=0;
+    }//GEN-LAST:event_NuevoActionPerformed
+
+    public void CalcularM(){
+        try{
+            int Ki[];                  
+            double suma,resultado,Ax,Xi[],funcion[],K_f[];                      
+            int a=Integer.parseInt(ALimit.getText());
+            int b=Integer.parseInt(BLimit.getText());
+            int n=Integer.parseInt(NVeces.getText());
+            
+            int NxDos=this.DublicaNXDos(n);
+            Etapa=new FormmulasSimpson();       
+            fila=new Object[NxDos+1]; 
+                 
+            Ax=Etapa.AnchoS(b, a, NxDos);
+            Xi= Etapa.XAumento(a, Ax, NxDos);
+            funcion=Etapa.FuncionPreterminada(Xi, a, NxDos);
+            Ki=Etapa.MultiploFuncion(NxDos);
+            K_f=Etapa.K_funcion(Ki,funcion, NxDos);
+            
+            for(i=0;i<=NxDos;i++)
+            {
+                fila[0]=i;               
+                fila[1]=Xi[i];
+                fila[2]=funcion[i]; 
+                fila[3]=Ki[i];
+                fila[4]=K_f[i];
+                MoldeTabla.addRow(fila);
+           }
+            ancho.setText(""+Ax);
+            suma=Etapa.SumaFunciones(K_f, NxDos);
+            resultado=Etapa.resultadoFinal(Ax, suma);
+            ResultadoF.setText(""+resultado);
+          
+            NVeces.setText(""+NxDos);
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Ingresó un dato incorrecto");
+        }
+    }
+   
+    public int DublicaNXDos(int n){
+        return 2*n;
+        
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -190,7 +261,6 @@ public class VentanaSimpson extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
    
