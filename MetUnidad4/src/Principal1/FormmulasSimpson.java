@@ -20,9 +20,8 @@ public class FormmulasSimpson {
     }
     
     public double[] XAumento(int a, double Ax, int n){
-        double acum[];
-        double sum=0;
-        acum=new double[n+1];
+        double acum[] =new double[n+1];
+        
         
         for(int i=0;i<=n;i++){
             if(i==0){
@@ -30,8 +29,8 @@ public class FormmulasSimpson {
                 acum[i]=a;
             }
             else{
-                sum+=Ax;
-                acum[i]=sum;
+                
+                acum[i]=Ax*i;
             }               
         }
         return  acum;     

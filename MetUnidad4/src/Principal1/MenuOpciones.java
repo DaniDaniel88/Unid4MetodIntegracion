@@ -18,21 +18,68 @@ public class MenuOpciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        OpTrapecio = new javax.swing.JMenuItem();
+        OpSimpson = new javax.swing.JMenuItem();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(420, 230));
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        jLabel1.setText("Integracion numerica");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(100, 50, 186, 21);
+
+        jLabel2.setFont(new java.awt.Font("DFGothic-EB", 0, 18)); // NOI18N
+        jLabel2.setText("Metodo numericos");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(110, 70, 144, 19);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/FondoX.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 470, 290);
+
+        jMenu1.setText("Menu Opciones");
+
+        OpTrapecio.setText("Metodo Trapecio");
+        OpTrapecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpTrapecioActionPerformed(evt);
+            }
+        });
+        jMenu1.add(OpTrapecio);
+
+        OpSimpson.setText("Metodo Simpson");
+        OpSimpson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpSimpsonActionPerformed(evt);
+            }
+        });
+        jMenu1.add(OpSimpson);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void OpTrapecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpTrapecioActionPerformed
+        VentanaTrapecio open = new VentanaTrapecio();
+        open.setVisible(true);
+        open.setLocationRelativeTo(null);
+    }//GEN-LAST:event_OpTrapecioActionPerformed
+
+    private void OpSimpsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpSimpsonActionPerformed
+        VentanaSimpson open = new VentanaSimpson();
+        open.setVisible(true);
+        open.setLocationRelativeTo(null);
+    }//GEN-LAST:event_OpSimpsonActionPerformed
 
     
     public static void main(String args[]) {
@@ -69,5 +116,12 @@ public class MenuOpciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem OpSimpson;
+    private javax.swing.JMenuItem OpTrapecio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
