@@ -1,6 +1,7 @@
 package Principal1;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 public class VentanaTrapecio extends javax.swing.JFrame {
     Object [] fila;
