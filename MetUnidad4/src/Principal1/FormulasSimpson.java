@@ -1,7 +1,7 @@
 
 package Principal1;
 
-public class FormmulasSimpson {
+public class FormulasSimpson {
     
     public double AnchoS(int b, int a, int nIterraciones)
     {  

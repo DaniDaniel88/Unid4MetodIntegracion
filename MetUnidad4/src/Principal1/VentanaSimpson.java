@@ -8,7 +8,7 @@ public class VentanaSimpson extends javax.swing.JFrame {
 
     Object [] fila;
     DefaultTableModel MoldeTabla;
-    FormmulasSimpson Etapa;
+    FormulasSimpson Etapa;
     String head[]= {"Iteraciones", "Xn", "F(x)", "K", "K*f(x)"};
     String data[][]={}; 
     int i;
@@ -208,7 +208,7 @@ public class VentanaSimpson extends javax.swing.JFrame {
             int n=Integer.parseInt(NVeces.getText());
             
             int NxDos=this.DublicaNXDos(n);
-            Etapa=new FormmulasSimpson();       
+            Etapa=new FormulasSimpson();       
             fila=new Object[NxDos+1]; 
                  
             Ax=Etapa.AnchoS(b, a, NxDos);
